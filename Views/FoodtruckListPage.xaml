@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage
+    x:Class="Foodtrucks_final.Views.FoodtruckListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Available Foodtrucks">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Clicked="OnItemAdded" IconImageSource="icon.png" />
+
+    </ContentPage.ToolbarItems>
+    <ListView
+        x:Name="listView"
+        Margin="0"
+        HasUnevenRows="True"
+        ItemSelected="OnListItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid
+                            Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                HeightRequest="120"
+                                Aspect="AspectFill"
+                                Source="{Binding ImageURL, TargetNullValue='addnew.png'}"
+                                WidthRequest="120" />
+                            <Grid Grid.Column="1"
+                                  Grid.Row="0"
+                                  RowDefinitions="auto, auto, auto"
+                                  ColumnDefinitions="auto"
+                                  VerticalOptions="Center"
+                                  Margin="0,0,0,0"
+                                  >
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                FontFamily="Bold"
+                                FontSize="30"
+                                Text="{Binding Name}"
+                                TextColor="White" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="0,0,0,0"
+                                FontFamily="Medium"
+                                Text="{Binding Description}" />
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Text="{Binding Distance, StringFormat='Distanță: {0:F2} km'}"
+                                TextColor="White" />
+                            <Label />
+                            </Grid>
+                        </Grid>
+                </ViewCell>
+                
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

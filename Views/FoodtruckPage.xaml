@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="Foodtrucks_final.Views.FoodtruckPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Name}">
+    <ContentPage.Content>
+        <StackLayout
+            Margin="20"
+            Spacing="20"
+            VerticalOptions="StartAndExpand">
+            <Label
+                Margin="10,0,0,0"
+                FontSize="Body"
+                Text="Foodtruck" />
+            <Entry
+                Margin="10,0,0,0"
+                Placeholder="Numele Foodtruck-ului"
+                Text="{Binding Name}" />
+
+            <Label
+                Margin="10,0,0,0"
+                FontSize="Body"
+                Text="Descriere" />
+            <Entry
+                Margin="10,0,0,0"
+                Placeholder="Descriere"
+                Text="{Binding Description}" />
+
+            <Label
+                Margin="10,0,0,0"
+                FontSize="Body"
+                Text="URL Imagine" />
+            <Entry
+                Margin="10,0,0,0"
+                Placeholder="URL Imagine"
+                Text="{Binding ImageURL}" />
+
+            <StackLayout
+                Padding="0,0,0,0"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal">
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                    <Label
+                        Margin="10,0,0,0"
+                        FontSize="Body"
+                        Text="Latitudine" />
+                    <Entry
+                        x:Name="Latitude"
+                        Margin="10,0,0,0"
+                        Placeholder="40.00000000"
+                        Text="{Binding Latitude, Mode=TwoWay}" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                    <Label
+                        Margin="10,0,0,0"
+                        FontSize="Body"
+                        Text="Longitudine" />
+                    <Entry
+                        x:Name="Longitude"
+                        Margin="10,0,0,0"
+                        Placeholder="40.00000000"
+                        Text="{Binding Longitude, Mode=TwoWay}" />
+                </StackLayout>
+                <Button
+                    BackgroundColor="Green"
+                    Clicked="OnGetLocation"
+                    Text="Ia locatia curenta"
+                    TextColor="White" />
+            </StackLayout>
+
+            <StackLayout
+                Padding="0,0,0,0"
+                HorizontalOptions="Fill"
+                Orientation="Horizontal">
+                <Button
+                    Margin="0,0,20,0"
+                    Clicked="OnSaveClicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Adaugă" />
+                <Button
+                    Margin="0,0,0,0"
+                    BackgroundColor="Red"
+                    Clicked="OnDeleteClicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Șterge"
+                    TextColor="White" />
+            </StackLayout>
+
+            <Button
+                BackgroundColor="Grey"
+                Clicked="OnCancelClicked"
+                Text="Anulează"
+                TextColor="White" />
+            <!--<Button Clicked="OnSaveClicked" Text="Save" WidthRequest="150" />
+
+            <Button Clicked="OnDeleteClicked" Text="Delete" WidthRequest="150" />
+
+            <Button Clicked="OnCancelClicked" Text="Cancel" />-->
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
