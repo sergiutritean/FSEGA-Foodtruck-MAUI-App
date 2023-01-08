@@ -8,11 +8,11 @@
     <ContentPage.ToolbarItems>
 
         <ToolbarItem Clicked="OnItemAdded" IconImageSource="icon.png" />
-
+        
     </ContentPage.ToolbarItems>
     <ListView
         x:Name="listView"
-        Margin="0"
+        Margin="1"
         HasUnevenRows="True"
         ItemSelected="OnListItemSelected">
         <ListView.ItemTemplate>
