@@ -12,7 +12,7 @@
     </ContentPage.ToolbarItems>
     <ListView
         x:Name="listView"
-        Margin="1"
+        Margin="5"
         HasUnevenRows="True"
         ItemSelected="OnListItemSelected">
         <ListView.ItemTemplate>
